@@ -76,7 +76,7 @@ public class FacadeUIAutomator {
 	 * @param delayToWaitNewWindow
 	 *            delay to wait to another window be showed
 	 * @throws UiObjectNotFoundException
-	 *             if the text was not found, than a exception will be throw
+	 *             if the Button was not found, than a exception will be throw
 	 */
 	public void clickOnButton(String text, int delayToWaitNewWindow)
 			throws UiObjectNotFoundException {
