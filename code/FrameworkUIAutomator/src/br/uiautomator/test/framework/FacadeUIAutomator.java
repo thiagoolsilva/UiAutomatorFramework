@@ -18,6 +18,7 @@ public class FacadeUIAutomator {
 	private SearchUtil mSearchUtil;
 	private DeviceUtil mDeviceUtil;
 	private Sleeper mSleeper;
+	private TextEnterer mTextEntered;
 
 	private FacadeUIAutomator(UiDevice dut) {
 		if (dut == null) {
@@ -29,6 +30,7 @@ public class FacadeUIAutomator {
 		mSearchUtil = new SearchUtil();
 		mDeviceUtil = new DeviceUtil(dut);
 		mSleeper = new Sleeper();
+		mTextEntered = new TextEnterer();
 	}
 
 	/***
@@ -89,12 +91,22 @@ public class FacadeUIAutomator {
 	 * @param index
 	 *            index
 	 * @throws UiObjectNotFoundException
-	 *             if the index was not found, than a exception will be throw
+	 *             if the Button was not found, than a exception will be throw
 	 */
 	public void clickOnButton(int index) throws UiObjectNotFoundException {
 		mClicker.clickOnButton(index);
 	}
 
+	/***
+	 * Insert a new String in the component TextView
+	 * @param textToBeFound try to find the text inserted on window
+	 * @param newText insert the text in the textView founded
+	 * @throws UiObjectNotFoundException  if the TextView was not found, than a exception will be throw
+	 */
+	public void enterText(String textToBeFound, String newText) throws UiObjectNotFoundException {
+		mTextEntered.setEditText(textToBeFound, newText);
+	}
+	
 	/***
 	 * CLick on Text
 	 * 
